@@ -10,3 +10,13 @@ jobs:
             - name: "Welcome Step"
               run: |
                 echo "Welcome to this step"
+                ls -a
+
+            - name: "Checkout from github directory"
+              uses: actions/checkout@v4
+            
+            - name: "List the project directory"
+              run: |
+                ls -a
+
+            
