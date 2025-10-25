@@ -21,6 +21,10 @@ jobs:
 
             - name: Build Docker Image
               run: | 
-                docker build -t actionsclass:2 .
+                docker build -t theoafactor/actionsclass:1.0.2 .
+
+            - name: Push to Docker Hub
+              run: |
+                docker push theoafactor/actionsclass:1.0.2
 
             
