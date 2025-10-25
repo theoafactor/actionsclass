@@ -25,6 +25,7 @@ jobs:
 
             - name: Push to Docker Hub
               run: |
+                docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
                 docker push theoafactor/actionsclass:1.0.2
 
             
