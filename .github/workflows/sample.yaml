@@ -2,23 +2,20 @@ name: "Sample Workflow"
 on: 
     push: 
         branches: 
-        - master
+        - test
 jobs: 
     testing_job:
         runs-on: ubuntu-latest
         steps: 
-            - name: "Welcome Step"
-              run: |
-                echo "Welcome to this step"
-                ls -a
 
             - name: "Checkout from github directory"
               uses: actions/checkout@v4
-            
-            - name: "List the project directory"
-              run: |
-                ls -a
 
+            - name: "Merge with the master branch"
+              run: |
+                git checkout master
+                git merge test
+  
             - name: Build Docker Image
               run: | 
                 docker build -t theoafactor/actionsclass:1.0.2 .
