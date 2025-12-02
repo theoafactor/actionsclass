@@ -5,6 +5,8 @@ services:
     - 1234:80
 
   sonarqube: 
-    image: sonarqube:community
+    build: 
+      context: ./sonar
+      dockerfile: dockerfile
     ports: 
     - 9000:9000
